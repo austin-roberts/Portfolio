@@ -1,0 +1,286 @@
+{
+  "profile": {
+    "name": "Austin Roberts",
+    "firstName": "Austin",
+    "initials": "AR",
+    "role": "Senior Front-End Developer",
+    "tagline": "Ecommerce Engineer | Web Platform Developer",
+    "location": "Florida",
+    "availability": "Open to Remote or Relocation",
+    "years": "13+ Years",
+    "email": "Austin@AustinRoberts.net",
+    "phone": "801.888.9543",
+    "website": "austinroberts.net",
+    "github": "github.com/austin-roberts",
+    "linkedin": "linkedin.com/in/austinroberts01",
+    "resumePath": "/resume.pdf",
+    "messageEndpoint": "https://formspree.io/f/mlgznend"
+  },
+  "hero": {
+    "title": "Hey, I'm Austin.",
+    "highlight": "I build ecommerce experiences that perform under pressure.",
+    "summary": "Senior front-end developer with deep ecommerce experience across Shopify, custom PHP platforms, checkout flows, product discovery, SEO, accessibility, and performance."
+  },
+  "bio": {
+    "title": "Meet Austin",
+    "image": "/austin.png",
+    "paragraphs": [
+      "I'm a senior front-end developer strongest in ecommerce roles that need practical engineering, platform problem-solving, and clean translation of complicated business requirements into maintainable web tools.",
+      "My background spans custom PHP ecommerce systems, Shopify storefronts, React-based reusable tools, checkout experiences, product discovery, SEO, accessibility, and site speed work."
+    ],
+    "tags": [
+      "Florida",
+      "13+ Years Experience",
+      "Open to Remote or Relocation"
+    ]
+  },
+  "developerJson": [
+    "{",
+    "  \"name\": \"Austin Roberts\",",
+    "  \"role\": \"Senior Front-End Developer\",",
+    "  \"focus\": \"Ecommerce engineering\",",
+    "  \"location\": \"Florida\",",
+    "  \"availability\": \"Remote or relocation\",",
+    "  \"experience\": \"13+ Years\",",
+    "  \"stack\": {",
+    "    \"frontend\": [\"JavaScript\", \"React\", \"HTML\", \"CSS\"],",
+    "    \"ecommerce\": [\"Shopify\", \"Liquid\", \"BigCommerce\", \"WooCommerce\"],",
+    "    \"platform\": [\"PHP\", \"Node.js\", \"Algolia\", \"Bloomreach\"]",
+    "  },",
+    "  \"strength\": \"Practical platform problem solving\"",
+    "}"
+  ],
+  "codeFooter": "$ coffee --strength strong --focus ship",
+  "proofPoints": [
+    {
+      "value": "13+",
+      "label": "years building production websites"
+    },
+    {
+      "value": "8",
+      "label": "Shopify stores supported during migration"
+    },
+    {
+      "value": "9s",
+      "label": "load-time reduction on one ecommerce store"
+    },
+    {
+      "value": "B2B",
+      "label": "retail, wholesale, and platform workflows"
+    }
+  ],
+  "homeExperience": [
+    {
+      "company": "Automotive Performance Group",
+      "role": "Lead Front-End Developer",
+      "period": "2016 - 2025",
+      "location": "Ecommerce portfolio",
+      "summary": "Led front-end work across automotive ecommerce sites, custom PHP platforms, Shopify storefronts, checkout flows, search, SEO, accessibility, and performance.",
+      "logo": "/apg-logo.png",
+      "tags": [
+        "JavaScript",
+        "React",
+        "Liquid",
+        "Shopify",
+        "PHP"
+      ],
+      "accent": "purple"
+    },
+    {
+      "company": "Code Corporation",
+      "role": "Web Developer",
+      "period": "2012 - 2016",
+      "location": "Marketing websites",
+      "summary": "Built and maintained responsive websites, marketing pages, PHP and jQuery-based experiences, and ongoing content and troubleshooting workflows.",
+      "logo": "/code-logo.png",
+      "logoTone": "light",
+      "tags": [
+        "PHP",
+        "JavaScript",
+        "jQuery",
+        "HTML",
+        "CSS"
+      ],
+      "accent": "blue"
+    },
+    {
+      "company": "Independent Web Work",
+      "role": "Web Development Support",
+      "period": "2025 - Present",
+      "location": "Florida / Remote",
+      "summary": "Providing front-end updates, PHP fixes, ecommerce improvements, performance cleanup, SEO fixes, and maintenance for small business web projects.",
+      "logo": "/independent-work-logo.svg",
+      "tags": [
+        "Maintenance",
+        "PHP",
+        "SEO",
+        "Ecommerce",
+        "Performance"
+      ],
+      "accent": "cyan"
+    }
+  ],
+  "resumeExperience": [
+    {
+      "company": "Automotive Performance Group",
+      "role": "Lead Front-End Developer",
+      "period": "2016 - Oct 2025",
+      "location": "Retail, wholesale, and B2B ecommerce",
+      "summary": "Led storefront development across custom PHP ecommerce systems and Shopify stores. Built reusable React and Liquid features, custom promotional tools, webhook-driven workflows, product discovery features with Bloomreach and Algolia, checkout experiences with Braintree, Apple Pay, and Google Pay, and performance work that reduced user-facing load time by roughly 9 seconds on one store.",
+      "logo": "/apg-logo.png",
+      "bullets": [
+        "Served as lead front-end developer for ecommerce storefronts spanning retail, wholesale, and B2B use cases.",
+        "Supported and modernized custom PHP-based ecommerce platforms for several years before helping transition key sites and workflows to Shopify.",
+        "Supported development across 8 Shopify stores during the company's Shopify migration period, maintaining storefront code, shipping new features, and helping keep platform work consistent across multiple brands.",
+        "Helped transition key ecommerce sites to Shopify through Liquid theme development, reusable storefront features, app block implementation, and storefront modernization.",
+        "Built React-based Shopify app functionality and internal tools that allowed reusable ecommerce features to be deployed across multiple stores instead of rebuilt store by store.",
+        "Developed custom discount and promotional tools to support business rules that were too specific for out-of-the-box platform behavior.",
+        "Built customer data workflows, webhook-driven tooling, custom admin pages, and storefront integrations for specialized B2B ecommerce needs.",
+        "Built and maintained product discovery features using Bloomreach and Algolia, including search interfaces, product listing behavior, recommendations, product placement, and analytics-focused merchandising tools.",
+        "Rebuilt checkout experiences used across multiple ecommerce stores, including Braintree-related work and Apple Pay / Google Pay support.",
+        "Improved site speed and front-end performance through script cleanup, asset-loading improvements, AMP support, and Core Web Vitals-focused optimizations; reduced user-facing load time by up to roughly 9 seconds on one ecommerce store.",
+        "Supported SEO, accessibility, and technical site-quality improvements, including structured data fixes, content placement, duplicate data cleanup, link/href improvements, and Google Merchant Center issue support.",
+        "Planned and supported A/B tests for checkout flows, product placement, UI changes, and conversion-focused experiments.",
+        "Established front-end workflow standards for GitHub usage, documentation, comments, file organization, and code review.",
+        "Managed one front-end developer for several years and later managed a front-end contractor for approximately three years while continuing hands-on development."
+      ],
+      "tags": [
+        "JavaScript",
+        "React",
+        "Liquid",
+        "Shopify",
+        "PHP",
+        "Algolia"
+      ],
+      "accent": "purple"
+    },
+    {
+      "company": "Code Corporation",
+      "role": "Web Developer",
+      "period": "2012 - 2016",
+      "location": "Marketing and business websites",
+      "summary": "Designed, coded, modified, and maintained company websites and marketing-focused web experiences. Supported responsive UI, PHP, JavaScript, jQuery, content updates, troubleshooting, and campaign pages for internal business teams.",
+      "logo": "/code-logo.png",
+      "logoTone": "light",
+      "bullets": [
+        "Designed, coded, and modified websites based on business requirements, visual direction, and usability goals.",
+        "Built responsive, user-friendly web experiences with clear navigation and maintainable front-end structure.",
+        "Supported PHP, JavaScript, and jQuery-based websites across implementation, maintenance, troubleshooting, and content updates.",
+        "Partnered with internal teams to deliver web pages, campaign assets, and digital experiences for marketing and business needs."
+      ],
+      "tags": [
+        "PHP",
+        "JavaScript",
+        "jQuery",
+        "Responsive UI",
+        "HTML",
+        "CSS"
+      ],
+      "accent": "blue"
+    },
+    {
+      "company": "Netmail",
+      "role": "Support Team Lead / Engineer",
+      "period": "2008 - 2012",
+      "location": "Technical client support",
+      "summary": "Led daily support operations, maintained service quality and SLA standards, hired and trained staff, coordinated process improvements, and worked directly with clients and internal teams to resolve technical issues.",
+      "bullets": [
+        "Managed daily support operations and helped maintain quality standards across the team.",
+        "Hired, trained, supervised, and supported staff in a technical client-service environment.",
+        "Coordinated support projects and helped introduce process improvements, tooling, and operational standards.",
+        "Worked directly with clients and internal teams to resolve technical issues and improve support consistency."
+      ],
+      "tags": [
+        "Team Leadership",
+        "Client Support",
+        "SLA",
+        "Process",
+        "Operations"
+      ],
+      "accent": "cyan"
+    }
+  ],
+  "skillGroups": [
+    {
+      "title": "Front-End Development",
+      "items": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "SASS/SCSS",
+        "LESS",
+        "Accessibility"
+      ]
+    },
+    {
+      "title": "Ecommerce Platforms",
+      "items": [
+        "Shopify",
+        "Liquid",
+        "BigCommerce",
+        "WordPress",
+        "WooCommerce",
+        "PHP"
+      ]
+    },
+    {
+      "title": "Search & Checkout",
+      "items": [
+        "Algolia",
+        "Bloomreach",
+        "Braintree",
+        "Apple Pay",
+        "Google Pay"
+      ]
+    },
+    {
+      "title": "Site Quality",
+      "items": [
+        "Core Web Vitals",
+        "SEO",
+        "A/B Testing",
+        "Google Merchant Center"
+      ]
+    },
+    {
+      "title": "Workflow",
+      "items": [
+        "Node.js",
+        "npm",
+        "Git/GitHub",
+        "Code Review",
+        "Documentation"
+      ]
+    }
+  ],
+  "projects": [
+    "Essante Organics: custom platform support, front-end updates, PHP and scripting fixes, website maintenance, content support, and implementation work with marketing and design stakeholders.",
+    "Ticket Rumba: BigCommerce front-end development from provided designs with Stencil, LESS, CMS work, and KeenIO-related analytics support.",
+    "Freelance web work: maintenance, technical fixes, ecommerce improvements, SEO cleanup, and small business website support."
+  ],
+  "terminal": {
+    "about": [
+      "{",
+      "  \"name\": \"Austin Roberts\",",
+      "  \"role\": \"Senior Front-End Developer\",",
+      "  \"focus\": [\"Ecommerce\", \"Front-End Architecture\", \"Platform Work\"],",
+      "  \"location\": \"Florida\",",
+      "  \"availability\": \"Remote or relocation\",",
+      "  \"stack\": [\"JavaScript\", \"React\", \"Liquid\", \"PHP\", \"Shopify\"],",
+      "  \"strength\": \"Turning complicated business requirements into maintainable web tools\"",
+      "}"
+    ],
+    "status": [
+      "YEARS EXPERIENCE    13+",
+      "ECOMMERCE FOCUS     Shopify, custom PHP, B2B, retail",
+      "RECENT PLATFORM     Automotive Performance Group",
+      "CORE STACK          JavaScript, React, Liquid, PHP",
+      "CURRENT STATUS      Available for hire"
+    ],
+    "resume": [
+      "Preparing resume.pdf...",
+      "Download should start automatically."
+    ]
+  }
+}
