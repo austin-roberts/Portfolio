@@ -49,6 +49,10 @@ export function App() {
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [terminalPrefillRequest, setTerminalPrefillRequest] = useState(0);
 
+  useEffect(() => {
+    document.title = profile.name;
+  }, []);
+
   function startContactCommand() {
     setTerminalOpen(true);
     setTerminalPrefillRequest((request) => request + 1);
@@ -93,7 +97,7 @@ function Header({
   return (
     <header className="site-header">
       <button className="logo" onClick={() => setPage('home')} aria-label="Home">
-        AR
+        <img src="/ar-logo.png" alt="" />
       </button>
       <nav className="nav-links" aria-label="Portfolio pages">
         <button className={page === 'home' ? 'active' : ''} onClick={() => setPage('home')}>
@@ -536,6 +540,7 @@ function TerminalPanel({
           </div>
         </form>
       </div>
+      <MobileCommandStrip onCommand={commitCommand} disabled={busy} />
       <CommandList />
     </aside>
   );
@@ -678,6 +683,38 @@ function CommandList() {
           <span>{command.name}</span>
           <small>{command.description}</small>
         </div>
+      ))}
+    </div>
+  );
+}
+
+const mobileCommands = [
+  { label: 'about', command: 'about' },
+  { label: 'experience', command: 'experience' },
+  { label: 'status', command: 'status' },
+  { label: 'contact', command: 'contact' },
+  { label: 'message', command: 'send message' },
+  { label: 'help', command: 'help' },
+];
+
+function MobileCommandStrip({
+  onCommand,
+  disabled,
+}: {
+  onCommand: (command: string) => void;
+  disabled: boolean;
+}) {
+  return (
+    <div className="mobile-command-strip" aria-label="Quick terminal commands">
+      {mobileCommands.map((command) => (
+        <button
+          type="button"
+          key={command.command}
+          disabled={disabled}
+          onClick={() => onCommand(command.command)}
+        >
+          {command.label}
+        </button>
       ))}
     </div>
   );

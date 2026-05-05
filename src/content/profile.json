@@ -13,12 +13,12 @@
     "website": "austinroberts.net",
     "github": "github.com/austin-roberts",
     "linkedin": "linkedin.com/in/austinroberts01",
-    "resumePath": "/resume.pdf",
+    "resumePath": "/Austin_Roberts_Resume.pdf",
     "messageEndpoint": "https://formspree.io/f/mlgznend"
   },
   "hero": {
     "title": "Hey, I'm Austin.",
-    "highlight": "I build ecommerce experiences that perform under pressure.",
+    "highlight": "I build web experiences that perform under pressure.",
     "summary": "Senior front-end developer with deep ecommerce experience across Shopify, custom PHP platforms, checkout flows, product discovery, SEO, accessibility, and performance."
   },
   "bio": {
