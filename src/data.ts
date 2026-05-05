@@ -32,6 +32,7 @@ type Profile = {
   website: string;
   github: string;
   linkedin: string;
+  resumePath?: string;
 };
 
 type Hero = {

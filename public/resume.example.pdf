@@ -1,0 +1,105 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 3253 >>
+stream
+BT
+/F1 10 Tf
+13 TL
+50 760 Td
+/F1 12 Tf (JORDAN TAYLOR) Tj /F1 10 Tf T*
+(Product Designer | Design Systems | Research | Prototyping) Tj T*
+(Pacific Northwest | Open to thoughtful collaborations) Tj T*
+(example.dev | hello@example.dev | 555.010.2048 | linkedin.com/in/example-profile) Tj T*
+T*
+/F1 12 Tf (SUMMARY) Tj /F1 10 Tf T*
+(Product designer with experience turning complex workflows into clear, accessible interfaces for) Tj T*
+(teams that need practical software.) Tj T*
+T*
+/F1 12 Tf (CORE SKILLS) Tj /F1 10 Tf T*
+(Product Design: Figma, Design Systems, Prototyping, Interface QA) Tj T*
+(Research & Strategy: Research, Usability Testing, Information Architecture, Workshops) Tj T*
+(Quality & Handoff: Accessibility, Content Design, Design Tokens, Documentation) Tj T*
+T*
+/F1 12 Tf (PROFESSIONAL EXPERIENCE) Tj /F1 10 Tf T*
+T*
+(NORTHSTAR LABS - Senior Product Designer) Tj T*
+(2021 - Present | Remote product team) Tj T*
+(Owned design work for a complex SaaS platform, including research, journey mapping, prototypes,) Tj T*
+(design system improvements, accessibility reviews, and handoff with engineering.) Tj T*
+(- Led discovery and design work for a planning workspace used by several operations teams.) Tj T*
+(- Built reusable interface patterns for dashboards, filters, approval flows, and reporting views.) Tj T*
+(- Partnered with engineering to improve accessibility, loading states, empty states, and form) Tj T*
+(  behavior.) Tj T*
+(- Created documentation that helped product, design, and engineering teams use shared patterns) Tj T*
+(  consistently.) Tj T*
+T*
+(BRIGHTLINE STUDIO - UX Designer) Tj T*
+(2018 - 2021 | Client services) Tj T*
+(Created responsive web experiences and product flows for client teams, balancing brand needs,) Tj T*
+(usability goals, content strategy, and implementation constraints.) Tj T*
+(- Designed responsive marketing pages, onboarding flows, and product screens from loose client) Tj T*
+(  requirements.) Tj T*
+(- Turned sketches and stakeholder notes into practical layouts that could be built without extra) Tj T*
+(  design churn.) Tj T*
+(- Audited existing pages for usability issues, inconsistent spacing, and confusing navigation) Tj T*
+(  patterns.) Tj T*
+(- Worked with developers to keep visual details, content needs, and implementation limits aligned.) Tj T*
+T*
+(HARBOR SUPPORT - Customer Operations Lead) Tj T*
+(2014 - 2018 | Operations team) Tj T*
+(Managed support workflows, documented recurring issues, helped improve internal tooling, and) Tj T*
+(partnered with product teams on customer pain points.) Tj T*
+(- Maintained daily support workflows and helped the team keep response quality consistent.) Tj T*
+(- Documented recurring customer issues so product and operations teams could spot patterns faster.) Tj T*
+(- Coached teammates on process updates, internal tools, and clearer client communication.) Tj T*
+(- Worked with product partners to turn support trends into practical improvements.) Tj T*
+T*
+/F1 12 Tf (SELECTED SAMPLE PROJECTS) Tj /F1 10 Tf T*
+(- Workflow audit: mapped a complex internal approval process and reduced duplicate steps across) Tj T*
+(  several teams.) Tj T*
+(- Component library: built documentation and usage guidance for shared interface components.) Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 153 >>
+stream
+BT
+/F1 10 Tf
+13 TL
+50 760 Td
+(- Prototype sprint: helped a small team validate a new dashboard concept before engineering) Tj T*
+(  investment.) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000003496 00000 n 
+0000003622 00000 n 
+0000003826 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3952
+%%EOF

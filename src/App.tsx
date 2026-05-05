@@ -86,7 +86,12 @@ function Header({
           Experience
         </button>
       </nav>
-      <a className="resume-button" href="/resume.pdf" aria-label="Download resume">
+      <a
+        className="resume-button"
+        href={profile.resumePath ?? '/resume.pdf'}
+        aria-label="Download resume"
+        download
+      >
         Resume <span>⇩</span>
       </a>
     </header>
@@ -228,6 +233,11 @@ function TerminalPanel({
       return;
     }
 
+    if (result.command === 'resume') {
+      void printResult(result).then(() => downloadResume());
+      return;
+    }
+
     void printResult(result);
   }
 
@@ -350,6 +360,15 @@ function TerminalPanel({
     setBusy(false);
     window.requestAnimationFrame(() => inputRef.current?.focus());
   }
+}
+
+function downloadResume() {
+  const link = document.createElement('a');
+  link.href = profile.resumePath ?? '/resume.pdf';
+  link.download = '';
+  document.body.append(link);
+  link.click();
+  link.remove();
 }
 
 function TerminalOutput({

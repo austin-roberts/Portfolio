@@ -12,7 +12,8 @@
     "phone": "555.010.2048",
     "website": "example.dev",
     "github": "github.com/example-profile",
-    "linkedin": "linkedin.com/in/example-profile"
+    "linkedin": "linkedin.com/in/example-profile",
+    "resumePath": "/resume.example.pdf"
   },
   "hero": {
     "title": "I design useful tools that",
