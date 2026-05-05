@@ -80,6 +80,12 @@
       "period": "2021 - Present",
       "location": "Remote product team",
       "summary": "Owned design work for a complex SaaS platform, including research, journey mapping, prototypes, design system improvements, accessibility reviews, and handoff with engineering.",
+      "bullets": [
+        "Led discovery and design work for a planning workspace used by several operations teams.",
+        "Built reusable interface patterns for dashboards, filters, approval flows, and reporting views.",
+        "Partnered with engineering to improve accessibility, loading states, empty states, and form behavior.",
+        "Created documentation that helped product, design, and engineering teams use shared patterns consistently."
+      ],
       "tags": ["Figma", "Research", "Design Systems", "Accessibility"],
       "accent": "purple"
     },
@@ -89,6 +95,12 @@
       "period": "2018 - 2021",
       "location": "Client services",
       "summary": "Created responsive web experiences and product flows for client teams, balancing brand needs, usability goals, content strategy, and implementation constraints.",
+      "bullets": [
+        "Designed responsive marketing pages, onboarding flows, and product screens from loose client requirements.",
+        "Turned sketches and stakeholder notes into practical layouts that could be built without extra design churn.",
+        "Audited existing pages for usability issues, inconsistent spacing, and confusing navigation patterns.",
+        "Worked with developers to keep visual details, content needs, and implementation limits aligned."
+      ],
       "tags": ["UX", "UI", "Content", "Responsive Design"],
       "accent": "blue"
     },
@@ -98,6 +110,12 @@
       "period": "2014 - 2018",
       "location": "Operations team",
       "summary": "Managed support workflows, documented recurring issues, helped improve internal tooling, and partnered with product teams on customer pain points.",
+      "bullets": [
+        "Maintained daily support workflows and helped the team keep response quality consistent.",
+        "Documented recurring customer issues so product and operations teams could spot patterns faster.",
+        "Coached teammates on process updates, internal tools, and clearer client communication.",
+        "Worked with product partners to turn support trends into practical improvements."
+      ],
       "tags": ["Operations", "Support", "Documentation", "Process"],
       "accent": "cyan"
     }

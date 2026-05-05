@@ -507,6 +507,10 @@ function HomePage({ setPage }: { setPage: (page: Page) => void }) {
 }
 
 function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
+  const [openExperience, setOpenExperience] = useState<string[]>(
+    resumeExperience[0]?.company ? [resumeExperience[0].company] : [],
+  );
+
   return (
     <>
       <section className="resume-hero">
@@ -521,7 +525,18 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
           <SectionTitle icon="briefcase">Work Experience</SectionTitle>
           <div className="experience-list vertical">
             {resumeExperience.map((item) => (
-              <ExperienceCard item={item} key={item.company} />
+              <ExperienceCard
+                item={item}
+                key={item.company}
+                expanded={openExperience.includes(item.company)}
+                onToggle={() =>
+                  setOpenExperience((current) =>
+                    current.includes(item.company)
+                      ? current.filter((company) => company !== item.company)
+                      : [...current, item.company],
+                  )
+                }
+              />
             ))}
           </div>
         </div>
@@ -586,9 +601,20 @@ function ExperiencePreview({ setPage }: { setPage: (page: Page) => void }) {
   );
 }
 
-function ExperienceCard({ item }: { item: ExperienceItem }) {
+function ExperienceCard({
+  item,
+  expanded = false,
+  onToggle,
+}: {
+  item: ExperienceItem;
+  expanded?: boolean;
+  onToggle?: () => void;
+}) {
+  const canExpand = Boolean(onToggle && item.bullets?.length);
+  const detailsId = `experience-details-${item.company.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
   return (
-    <article className="experience-card">
+    <article className={`experience-card ${expanded ? 'expanded' : ''}`}>
       <div className={`card-icon ${item.accent}`} />
       <div className="card-title-row">
         <h3>{item.company}</h3>
@@ -601,6 +627,25 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
           <span key={tag}>{tag}</span>
         ))}
       </div>
+      {canExpand && (
+        <button
+          className="experience-toggle"
+          type="button"
+          aria-expanded={expanded}
+          aria-controls={detailsId}
+          onClick={onToggle}
+        >
+          {expanded ? 'Hide details' : 'Show details'}
+          <span>{expanded ? '−' : '+'}</span>
+        </button>
+      )}
+      {canExpand && expanded && (
+        <ul className="experience-details" id={detailsId}>
+          {item.bullets?.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      )}
       <small>⌖ {item.location}</small>
     </article>
   );

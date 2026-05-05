@@ -8,6 +8,7 @@ export type ExperienceItem = {
   period: string;
   location: string;
   summary: string;
+  bullets?: string[];
   tags: string[];
   accent: 'blue' | 'purple' | 'cyan';
 };
