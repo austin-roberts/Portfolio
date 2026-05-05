@@ -68,7 +68,7 @@ button {
   position: fixed;
   inset: 0 auto 0 0;
   z-index: 20;
-  width: 340px;
+  width: 372px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -295,8 +295,8 @@ button {
 
 .site-main {
   min-width: 0;
-  margin-left: 340px;
-  padding: 0 1.65rem 1.75rem;
+  margin-left: 372px;
+  padding: 0 2rem 1.75rem;
 }
 
 .site-header {
@@ -374,16 +374,16 @@ button {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(18rem, 1fr) minmax(20rem, 1.1fr) minmax(17rem, 0.85fr);
+  grid-template-columns: minmax(20rem, 1fr) minmax(19rem, 1fr);
   align-items: center;
-  gap: 1.9rem;
+  gap: 1.35rem;
   padding: 2rem 0 1.7rem;
 }
 
 .hero-copy h1,
 .resume-hero h1 {
   margin: 0;
-  max-width: 11ch;
+  max-width: 12ch;
   font-size: clamp(2.25rem, 4vw, 3.75rem);
   line-height: 1.15;
   letter-spacing: 0;
@@ -397,7 +397,7 @@ button {
 }
 
 .hero-copy p {
-  max-width: 38rem;
+  max-width: 43rem;
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.7;
@@ -501,6 +501,7 @@ button {
 }
 
 .code-card {
+  grid-column: 1 / -1;
   overflow: hidden;
   font-family: var(--font-mono);
 }
@@ -756,6 +757,16 @@ footer {
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.8rem;
+}
+
+@media (min-width: 1380px) {
+  .hero {
+    grid-template-columns: minmax(23rem, 1.22fr) minmax(18rem, 0.9fr) minmax(21rem, 1.1fr);
+  }
+
+  .code-card {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 1180px) {
