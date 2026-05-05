@@ -45,7 +45,11 @@ export function App() {
         >
           $
         </button>
-        <TerminalPanel open={terminalOpen} onClose={() => setTerminalOpen(false)} />
+        <TerminalPanel
+          open={terminalOpen}
+          onClose={() => setTerminalOpen(false)}
+          setPage={setPage}
+        />
         <main className="site-main">
           <Header page={page} setPage={setPage} />
           {page === 'home' ? (
@@ -92,9 +96,11 @@ function Header({
 function TerminalPanel({
   open,
   onClose,
+  setPage,
 }: {
   open: boolean;
   onClose: () => void;
+  setPage: (page: Page) => void;
 }) {
   const [entries, setEntries] = useState<TerminalEntry[]>([]);
   const [typedCommand, setTypedCommand] = useState('');
@@ -212,7 +218,17 @@ function TerminalPanel({
 
     setEntries((current) => [...current, { kind: 'prompt', text: cleanInput }]);
     setTerminalInput('');
-    void printResult(runCommand(cleanInput));
+    const result = runCommand(cleanInput);
+
+    if (result.command === 'experience') {
+      void printResult({
+        ...result,
+        lines: [...result.lines, 'Navigating to experience...'],
+      }).then(() => setPage('experience'));
+      return;
+    }
+
+    void printResult(result);
   }
 
   function catchEnter(event: KeyboardEvent<HTMLInputElement>) {
