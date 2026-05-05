@@ -18,6 +18,7 @@ import {
   hero,
   Page,
   profile,
+  proofPoints,
   projects,
   resumeExperience,
   skillGroups,
@@ -514,6 +515,7 @@ function HomePage({ setPage }: { setPage: (page: Page) => void }) {
             <span />
             {profile.availability}
           </div>
+          <ProofStrip />
         </div>
         <LogoStage />
         <DeveloperCard />
@@ -522,6 +524,19 @@ function HomePage({ setPage }: { setPage: (page: Page) => void }) {
       <BioAndContact />
       <Footer />
     </>
+  );
+}
+
+function ProofStrip() {
+  return (
+    <div className="proof-strip" aria-label="Portfolio highlights">
+      {proofPoints.map((point) => (
+        <div className="proof-point" key={`${point.value}-${point.label}`}>
+          <strong>{point.value}</strong>
+          <span>{point.label}</span>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -676,7 +691,9 @@ function BioAndContact() {
       <article className="bio-card">
         <SectionTitle icon="code">{bio.title}</SectionTitle>
         <div className="bio-content">
-          <div className="portrait-placeholder">Photo</div>
+          <div className="portrait-placeholder" aria-label={`${profile.name} portrait placeholder`}>
+            <span>{profile.initials}</span>
+          </div>
           <div>
             {bio.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>

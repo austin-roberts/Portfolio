@@ -18,6 +18,11 @@ export type SkillGroup = {
   items: string[];
 };
 
+export type ProofPoint = {
+  value: string;
+  label: string;
+};
+
 type Profile = {
   name: string;
   firstName: string;
@@ -59,6 +64,7 @@ type SiteContent = {
   bio: Bio;
   developerJson: string[];
   codeFooter: string;
+  proofPoints: ProofPoint[];
   homeExperience: ExperienceItem[];
   resumeExperience: ExperienceItem[];
   skillGroups: SkillGroup[];
@@ -73,6 +79,7 @@ export const hero = content.hero;
 export const bio = content.bio;
 export const developerJson = content.developerJson;
 export const codeFooter = content.codeFooter;
+export const proofPoints = content.proofPoints;
 export const homeExperience = content.homeExperience;
 export const resumeExperience = content.resumeExperience;
 export const skillGroups = content.skillGroups;

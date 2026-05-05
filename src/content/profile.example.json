@@ -45,6 +45,24 @@
     "}"
   ],
   "codeFooter": "$ tea --clarity high --focus systems",
+  "proofPoints": [
+    {
+      "value": "8+",
+      "label": "years shaping practical product work"
+    },
+    {
+      "value": "40+",
+      "label": "flows, prototypes, and shipped screens"
+    },
+    {
+      "value": "A11y",
+      "label": "built into reviews and handoff"
+    },
+    {
+      "value": "Systems",
+      "label": "patterns teams can reuse"
+    }
+  ],
   "homeExperience": [
     {
       "company": "Northstar Labs",
