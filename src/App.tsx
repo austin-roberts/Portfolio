@@ -97,6 +97,8 @@ function TerminalPanel({
   const [busy, setBusy] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const inputValueRef = useRef('');
+  const busyRef = useRef(true);
 
   useEffect(() => {
     let cancelled = false;
@@ -130,6 +132,59 @@ function TerminalPanel({
     }
   }, [busy, open]);
 
+  useEffect(() => {
+    busyRef.current = busy;
+  }, [busy]);
+
+  useEffect(() => {
+    function catchGlobalTyping(event: globalThis.KeyboardEvent) {
+      if (
+        event.defaultPrevented ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.altKey ||
+        busyRef.current
+      ) {
+        return;
+      }
+
+      if (event.target === inputRef.current) {
+        return;
+      }
+
+      if (event.key.length === 1) {
+        event.preventDefault();
+        setTerminalInput(inputValueRef.current + event.key);
+        inputRef.current?.focus();
+        return;
+      }
+
+      if (event.key === 'Backspace') {
+        event.preventDefault();
+        setTerminalInput(inputValueRef.current.slice(0, -1));
+        inputRef.current?.focus();
+        return;
+      }
+
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        commitCommand(inputValueRef.current);
+        inputRef.current?.focus();
+        return;
+      }
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setTerminalInput('');
+        inputRef.current?.focus();
+      }
+    }
+
+    window.addEventListener('keydown', catchGlobalTyping);
+
+    return () => window.removeEventListener('keydown', catchGlobalTyping);
+  }, []);
+
   function focusInput(event: MouseEvent<HTMLElement>) {
     if (event.target instanceof HTMLButtonElement) {
       return;
@@ -146,15 +201,12 @@ function TerminalPanel({
   function commitCommand(rawInput: string) {
     const cleanInput = rawInput.trim();
 
-    if (!cleanInput || busy) {
+    if (!cleanInput || busyRef.current) {
       return;
     }
 
     setEntries((current) => [...current, { kind: 'prompt', text: cleanInput }]);
-    setInput('');
-    if (inputRef.current) {
-      inputRef.current.value = '';
-    }
+    setTerminalInput('');
     void printResult(runCommand(cleanInput));
   }
 
@@ -165,6 +217,15 @@ function TerminalPanel({
 
     event.preventDefault();
     commitCommand(event.currentTarget.value);
+  }
+
+  function setTerminalInput(nextInput: string) {
+    inputValueRef.current = nextInput;
+    setInput(nextInput);
+
+    if (inputRef.current) {
+      inputRef.current.value = nextInput;
+    }
   }
 
   return (
@@ -216,8 +277,8 @@ function TerminalPanel({
               id="terminal-input"
               value={input}
               disabled={busy}
-              onChange={(event) => setInput(event.target.value)}
-              onInput={(event) => setInput(event.currentTarget.value)}
+              onChange={(event) => setTerminalInput(event.target.value)}
+              onInput={(event) => setTerminalInput(event.currentTarget.value)}
               onKeyDown={catchEnter}
               spellCheck={false}
               autoComplete="off"
