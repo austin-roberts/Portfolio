@@ -142,6 +142,14 @@ function TerminalPanel({
   const messageFlowRef = useRef<MessageFlow | null>(null);
 
   useEffect(() => {
+    document.body.classList.toggle('terminal-drawer-open', open);
+
+    return () => {
+      document.body.classList.remove('terminal-drawer-open');
+    };
+  }, [open]);
+
+  useEffect(() => {
     let cancelled = false;
 
     async function boot() {
