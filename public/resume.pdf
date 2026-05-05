@@ -1,0 +1,141 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 3864 >>
+stream
+BT
+/F1 10 Tf
+13 TL
+50 760 Td
+/F1 12 Tf (AUSTIN ROBERTS) Tj /F1 10 Tf T*
+(Senior Front-End Developer | Ecommerce Engineer | Web Platform Developer) Tj T*
+(Florida | Open to Remote or Relocation) Tj T*
+(austinroberts.net | Austin@AustinRoberts.net | 801.888.9543 | linkedin.com/in/austinroberts01) Tj T*
+T*
+/F1 12 Tf (SUMMARY) Tj /F1 10 Tf T*
+(Senior front-end developer with deep ecommerce experience across Shopify, custom PHP platforms,) Tj T*
+(checkout flows, product discovery, SEO, accessibility, and performance.) Tj T*
+T*
+/F1 12 Tf (CORE SKILLS) Tj /F1 10 Tf T*
+(Front-End Development: JavaScript, React, HTML, CSS, SASS/SCSS, LESS, Accessibility) Tj T*
+(Ecommerce Platforms: Shopify, Liquid, BigCommerce, WordPress, WooCommerce, PHP) Tj T*
+(Search & Checkout: Algolia, Bloomreach, Braintree, Apple Pay, Google Pay) Tj T*
+(Site Quality: Core Web Vitals, SEO, A/B Testing, Google Merchant Center) Tj T*
+(Workflow: Node.js, npm, Git/GitHub, Code Review, Documentation) Tj T*
+T*
+/F1 12 Tf (PROFESSIONAL EXPERIENCE) Tj /F1 10 Tf T*
+T*
+(AUTOMOTIVE PERFORMANCE GROUP - Lead Front-End Developer) Tj T*
+(2016 - Oct 2025 | Retail, wholesale, and B2B ecommerce) Tj T*
+(Led storefront development across custom PHP ecommerce systems and Shopify stores. Built reusable) Tj T*
+(React and Liquid features, custom promotional tools, webhook-driven workflows, product discovery) Tj T*
+(features with Bloomreach and Algolia, checkout experiences with Braintree, Apple Pay, and Google) Tj T*
+(Pay, and performance work that reduced user-facing load time by roughly 9 seconds on one store.) Tj T*
+(- Served as lead front-end developer for ecommerce storefronts spanning retail, wholesale, and B2B) Tj T*
+(  use cases.) Tj T*
+(- Supported and modernized custom PHP-based ecommerce platforms for several years before helping) Tj T*
+(  transition key sites and workflows to Shopify.) Tj T*
+(- Supported development across 8 Shopify stores during the company's Shopify migration period,) Tj T*
+(  maintaining storefront code, shipping new features, and helping keep platform work consistent) Tj T*
+(  across multiple brands.) Tj T*
+(- Helped transition key ecommerce sites to Shopify through Liquid theme development, reusable) Tj T*
+(  storefront features, app block implementation, and storefront modernization.) Tj T*
+(- Built React-based Shopify app functionality and internal tools that allowed reusable ecommerce) Tj T*
+(  features to be deployed across multiple stores instead of rebuilt store by store.) Tj T*
+(- Developed custom discount and promotional tools to support business rules that were too specific) Tj T*
+(  for out-of-the-box platform behavior.) Tj T*
+(- Built customer data workflows, webhook-driven tooling, custom admin pages, and storefront) Tj T*
+(  integrations for specialized B2B ecommerce needs.) Tj T*
+(- Built and maintained product discovery features using Bloomreach and Algolia, including search) Tj T*
+(  interfaces, product listing behavior, recommendations, product placement, and analytics-focused) Tj T*
+(  merchandising tools.) Tj T*
+(- Rebuilt checkout experiences used across multiple ecommerce stores, including Braintree-related) Tj T*
+(  work and Apple Pay / Google Pay support.) Tj T*
+(- Improved site speed and front-end performance through script cleanup, asset-loading) Tj T*
+(  improvements, AMP support, and Core Web Vitals-focused optimizations; reduced user-facing load) Tj T*
+(  time by up to roughly 9 seconds on one ecommerce store.) Tj T*
+(- Supported SEO, accessibility, and technical site-quality improvements, including structured data) Tj T*
+(  fixes, content placement, duplicate data cleanup, link/href improvements, and Google Merchant) Tj T*
+(  Center issue support.) Tj T*
+(- Planned and supported A/B tests for checkout flows, product placement, UI changes, and) Tj T*
+(  conversion-focused experiments.) Tj T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 2609 >>
+stream
+BT
+/F1 10 Tf
+13 TL
+50 760 Td
+(- Established front-end workflow standards for GitHub usage, documentation, comments, file) Tj T*
+(  organization, and code review.) Tj T*
+(- Managed one front-end developer for several years and later managed a front-end contractor for) Tj T*
+(  approximately three years while continuing hands-on development.) Tj T*
+T*
+(CODE CORPORATION - Web Developer) Tj T*
+(2012 - 2016 | Marketing and business websites) Tj T*
+(Designed, coded, modified, and maintained company websites and marketing-focused web experiences.) Tj T*
+(Supported responsive UI, PHP, JavaScript, jQuery, content updates, troubleshooting, and campaign) Tj T*
+(pages for internal business teams.) Tj T*
+(- Designed, coded, and modified websites based on business requirements, visual direction, and) Tj T*
+(  usability goals.) Tj T*
+(- Built responsive, user-friendly web experiences with clear navigation and maintainable front-end) Tj T*
+(  structure.) Tj T*
+(- Supported PHP, JavaScript, and jQuery-based websites across implementation, maintenance,) Tj T*
+(  troubleshooting, and content updates.) Tj T*
+(- Partnered with internal teams to deliver web pages, campaign assets, and digital experiences for) Tj T*
+(  marketing and business needs.) Tj T*
+T*
+(NETMAIL - Support Team Lead / Engineer) Tj T*
+(2008 - 2012 | Technical client support) Tj T*
+(Led daily support operations, maintained service quality and SLA standards, hired and trained staff,) Tj T*
+(coordinated process improvements, and worked directly with clients and internal teams to resolve) Tj T*
+(technical issues.) Tj T*
+(- Managed daily support operations and helped maintain quality standards across the team.) Tj T*
+(- Hired, trained, supervised, and supported staff in a technical client-service environment.) Tj T*
+(- Coordinated support projects and helped introduce process improvements, tooling, and operational) Tj T*
+(  standards.) Tj T*
+(- Worked directly with clients and internal teams to resolve technical issues and improve support) Tj T*
+(  consistency.) Tj T*
+T*
+/F1 12 Tf (ADDITIONAL PROJECTS) Tj /F1 10 Tf T*
+(- Essante Organics: custom platform support, front-end updates, PHP and scripting fixes, website) Tj T*
+(  maintenance, content support, and implementation work with marketing and design stakeholders.) Tj T*
+(- Ticket Rumba: BigCommerce front-end development from provided designs with Stencil, LESS, CMS) Tj T*
+(  work, and KeenIO-related analytics support.) Tj T*
+(- Freelance web work: maintenance, technical fixes, ecommerce improvements, SEO cleanup, and small) Tj T*
+(  business website support.) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents 6 0 R >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000004107 00000 n 
+0000004233 00000 n 
+0000006894 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+7020
+%%EOF
