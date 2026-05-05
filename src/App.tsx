@@ -92,7 +92,7 @@ function Header({
         aria-label="Download resume"
         download
       >
-        Resume <span>⇩</span>
+        Resume <Icon name="download" />
       </a>
     </header>
   );
@@ -765,7 +765,16 @@ function SectionTitle({
   );
 }
 
-type IconName = 'briefcase' | 'code' | 'globe' | 'layers' | 'mail' | 'phone' | 'send' | 'spark';
+type IconName =
+  | 'briefcase'
+  | 'code'
+  | 'download'
+  | 'globe'
+  | 'layers'
+  | 'mail'
+  | 'phone'
+  | 'send'
+  | 'spark';
 
 function Icon({ name }: { name: IconName }) {
   const paths: Record<IconName, ReactNode> = {
@@ -780,6 +789,13 @@ function Icon({ name }: { name: IconName }) {
       <>
         <path d="m9 8-4 4 4 4" />
         <path d="m15 8 4 4-4 4" />
+      </>
+    ),
+    download: (
+      <>
+        <path d="M12 4v9" />
+        <path d="m8 10 4 4 4-4" />
+        <path d="M5 17v2h14v-2" />
       </>
     ),
     globe: (
