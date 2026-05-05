@@ -597,11 +597,9 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
 
 function LogoStage() {
   return (
-    <div className="logo-stage" aria-label={`${profile.initials} monogram placeholder`}>
-      <div className="grid-glow" />
-      <div className="ar-mark">{profile.initials}</div>
-      <div className="portal" />
-    </div>
+    <figure className="logo-stage">
+      <img src="/hero-art.png" alt={`${profile.initials} glass monogram centerpiece`} />
+    </figure>
   );
 }
 

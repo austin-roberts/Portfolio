@@ -389,7 +389,7 @@ button {
 .hero-copy h1,
 .resume-hero h1 {
   margin: 0;
-  max-width: 13.8ch;
+  max-width: 15ch;
   font-size: clamp(2.35rem, 3.7vw, 3.65rem);
   line-height: 1.15;
   letter-spacing: 0;
@@ -488,47 +488,23 @@ button {
 
 .logo-stage {
   position: relative;
-  min-height: 23rem;
+  min-height: 26rem;
   display: grid;
   place-items: center;
   overflow: hidden;
+  margin: 0;
 }
 
-.grid-glow {
-  position: absolute;
-  inset: 8%;
-  background:
-    radial-gradient(circle at 50% 58%, rgba(18, 216, 255, 0.22), transparent 11rem),
-    linear-gradient(rgba(20, 124, 255, 0.16) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 124, 255, 0.16) 1px, transparent 1px);
-  background-size: auto, 26px 26px, 26px 26px;
-  mask-image: radial-gradient(circle, black, transparent 72%);
-}
-
-.ar-mark {
-  position: relative;
-  z-index: 1;
-  font-size: clamp(6rem, 16vw, 11rem);
-  font-weight: 950;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 3px var(--cyan);
-  text-shadow:
-    0 0 22px rgba(18, 216, 255, 0.9),
-    18px 16px 0 rgba(150, 87, 255, 0.45);
-}
-
-.portal {
-  position: absolute;
-  bottom: 15%;
-  width: 58%;
-  max-width: 22rem;
-  aspect-ratio: 5 / 1;
-  border: 1px solid rgba(18, 216, 255, 0.7);
-  border-radius: 50%;
-  box-shadow:
-    0 0 24px var(--blue),
-    inset 0 0 22px var(--cyan);
+.logo-stage img {
+  display: block;
+  width: min(145%, 48rem);
+  max-width: none;
+  height: auto;
+  filter: drop-shadow(0 0 34px rgba(18, 216, 255, 0.16));
+  mix-blend-mode: screen;
+  mask-image: radial-gradient(circle at 50% 50%, black 58%, transparent 82%);
+  transform: scale(1.18);
+  transform-origin: center;
 }
 
 .code-card,
@@ -1056,7 +1032,7 @@ footer {
 
   .hero-copy h1,
   .resume-hero h1 {
-    max-width: 13.8ch;
+    max-width: 15ch;
   }
 
   .logo-stage {
