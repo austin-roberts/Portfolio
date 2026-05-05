@@ -45,6 +45,8 @@ body {
 
 body.terminal-drawer-open {
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 button,
@@ -987,24 +989,29 @@ footer {
 
   .terminal-panel {
     position: fixed;
-    inset: 0 auto auto 0;
+    inset: 0 auto 0 0;
     z-index: 40;
     width: 100vw;
-    max-width: 30rem;
-    height: 100vh;
-    height: 100dvh;
+    max-width: none;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
     max-height: 100dvh;
     transform: translateX(-105%);
     transition: transform 220ms ease;
     background:
       radial-gradient(circle at 0 0, rgba(18, 216, 255, 0.1), transparent 15rem),
-      linear-gradient(180deg, rgba(2, 13, 22, 0.995), rgba(1, 8, 15, 0.995));
+      linear-gradient(180deg, #020d16, #01080f);
     box-shadow: 20px 0 60px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    touch-action: pan-y;
   }
 
   .terminal-scroll {
     min-height: 0;
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .terminal-form {
