@@ -1,4 +1,4 @@
-import { profile } from './data';
+import { profile, resumeExperience, terminal } from './data';
 
 export type TerminalCommand = {
   name: string;
@@ -11,43 +11,31 @@ export type TerminalResult = {
   lines: string[];
 };
 
-const jsonLines = [
-  '{',
-  '  "name": "Austin Roberts",',
-  '  "role": "Full-Stack Developer",',
-  '  "location": "Remote",',
-  '  "focus": ["Web", "APIs", "DevEx"],',
-  '  "passion": "Building performant, accessible digital experiences",',
-  '  "stack": ["TypeScript", "Next.js", "Node.js", "React"],',
-  '  "currently": "Building cool things"',
-  '}',
-];
-
 export const commands: TerminalCommand[] = [
   {
     name: 'about',
-    description: 'Learn about Austin',
-    run: () => jsonLines,
+    description: `Learn about ${profile.firstName}`,
+    run: () => terminal.about,
   },
   {
     name: 'experience',
     description: 'Work history & roles',
-    run: () => [
-      '2022 - Present  Acme Inc.           Senior Software Engineer',
-      '2019 - 2022     DataFlow Systems    Software Engineer',
-      '2017 - 2019     Pixel Studio        Frontend Developer',
-    ],
+    run: () =>
+      resumeExperience.map((item) =>
+        `${item.period.padEnd(15, ' ')} ${item.company.padEnd(30, ' ')} ${item.role}`,
+      ),
   },
   {
     name: 'resume',
     description: 'Download resume',
-    run: () => ['resume.pdf is wired as a placeholder for now.'],
+    run: () => terminal.resume,
   },
   {
     name: 'contact',
     description: 'Get in touch',
     run: () => [
       `email     ${profile.email}`,
+      `phone     ${profile.phone}`,
       `web       ${profile.website}`,
       `github    ${profile.github}`,
       `linkedin  ${profile.linkedin}`,
@@ -56,13 +44,7 @@ export const commands: TerminalCommand[] = [
   {
     name: 'status',
     description: 'System status',
-    run: () => [
-      'SYSTEM UPTIME       47d 22h 11m',
-      'CODE COMMITS        1,284',
-      'YEARS EXPERIENCE    4+',
-      'TECHNOLOGIES        20+',
-      'CURRENT STATUS      Available for hire',
-    ],
+    run: () => terminal.status,
   },
   {
     name: 'help',

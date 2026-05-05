@@ -10,10 +10,14 @@ import {
 } from 'react';
 import {
   type ExperienceItem,
-  education,
+  bio,
+  codeFooter,
+  developerJson,
   homeExperience,
+  hero,
   Page,
   profile,
+  projects,
   resumeExperience,
   skills,
 } from './data';
@@ -240,7 +244,7 @@ function TerminalPanel({
       <div className="terminal-scroll" ref={scrollRef}>
         {busy && entries.length === 0 && (
           <>
-            <p className="terminal-path">austinroberts.net ~</p>
+            <p className="terminal-path">{profile.website} ~</p>
             <p className="terminal-line">
               <span className="prompt-mark">&gt;</span> {typedCommand}
               <span className="cursor" />
@@ -250,7 +254,7 @@ function TerminalPanel({
         {entries.map((entry, index) =>
           entry.kind === 'prompt' ? (
             <div className="terminal-block" key={`${entry.text}-${index}`}>
-              <p className="terminal-path">austinroberts.net ~</p>
+              <p className="terminal-path">{profile.website} ~</p>
               <p className="terminal-line">
                 <span className="prompt-mark">&gt;</span> {entry.text}
               </p>
@@ -265,7 +269,7 @@ function TerminalPanel({
         )}
         <form onSubmit={submitCommand} className="terminal-form">
           <label className="terminal-path" htmlFor="terminal-input">
-            austinroberts.net ~
+            {profile.website} ~
           </label>
           <div className="terminal-input-row">
             <span className="prompt-mark">&gt;</span>
@@ -470,19 +474,16 @@ function HomePage({ setPage }: { setPage: (page: Page) => void }) {
       <section className="hero">
         <div className="hero-copy">
           <h1>
-            I build digital experiences that <span>make an impact.</span>
+            {hero.title} <span>{hero.highlight}</span>
           </h1>
-          <p>
-            Full-stack developer with 4+ years of experience building fast,
-            scalable, and accessible applications with modern technologies.
-          </p>
+          <p>{hero.summary}</p>
           <div className="hero-actions">
             <button onClick={() => setPage('experience')}>View Experience →</button>
             <a href={`mailto:${profile.email}`}>Get in Touch</a>
           </div>
           <div className="availability">
             <span />
-            Available for new opportunities
+            {profile.availability}
           </div>
         </div>
         <LogoStage />
@@ -500,8 +501,8 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
     <>
       <section className="resume-hero">
         <div>
-          <p className="eyebrow">Resume</p>
-          <h1>Experience built across product, platform, and polished front ends.</h1>
+          <p className="eyebrow">{profile.role}</p>
+          <h1>Experience across ecommerce platforms, storefronts, and web operations.</h1>
         </div>
         <button onClick={() => setPage('home')}>Back Home →</button>
       </section>
@@ -521,9 +522,9 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
               <span key={skill}>{skill}</span>
             ))}
           </div>
-          <SectionTitle>Education</SectionTitle>
+          <SectionTitle>Additional Projects</SectionTitle>
           <div className="detail-panel">
-            {education.map((item) => (
+            {projects.map((item) => (
               <p key={item}>{item}</p>
             ))}
           </div>
@@ -536,32 +537,16 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
 
 function LogoStage() {
   return (
-    <div className="logo-stage" aria-label="AR monogram placeholder">
+    <div className="logo-stage" aria-label={`${profile.initials} monogram placeholder`}>
       <div className="grid-glow" />
-      <div className="ar-mark">AR</div>
+      <div className="ar-mark">{profile.initials}</div>
       <div className="portal" />
     </div>
   );
 }
 
 function DeveloperCard() {
-  const json = useMemo(
-    () => [
-      '{',
-      '  "name": "Austin Roberts",',
-      '  "role": "Full-Stack Developer",',
-      '  "location": "Remote Worldwide",',
-      '  "experience": "4+ Years",',
-      '  "stack": {',
-      '    "frontend": ["React", "TypeScript", "CSS"],',
-      '    "backend": ["Node.js", "Express", "PostgreSQL"],',
-      '    "tools": ["Docker", "Git", "Vercel"]',
-      '  },',
-      '  "currently": "Building cool things"',
-      '}',
-    ],
-    [],
-  );
+  const json = useMemo(() => developerJson, []);
 
   return (
     <div className="code-card">
@@ -570,7 +555,7 @@ function DeveloperCard() {
         developer.json
       </div>
       <pre>{json.join('\n')}</pre>
-      <div className="code-footer">$ coffee --strength strong --focus ship</div>
+      <div className="code-footer">{codeFooter}</div>
     </div>
   );
 }
@@ -615,24 +600,17 @@ function BioAndContact() {
   return (
     <section className="lower-grid">
       <article className="bio-card">
-        <SectionTitle>Meet Austin</SectionTitle>
+        <SectionTitle>{bio.title}</SectionTitle>
         <div className="bio-content">
           <div className="portrait-placeholder">Photo</div>
           <div>
-            <p>
-              I'm a full-stack developer who loves turning complex problems into
-              clean, intuitive solutions. With 4+ years of experience building web
-              applications, APIs, and developer tools, I focus on performance,
-              scalability, and great user experience.
-            </p>
-            <p>
-              When I'm not coding, you'll find me brewing pour-over coffee,
-              exploring new tech, or contributing to open source.
-            </p>
+            {bio.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
             <div className="mini-tags">
-              <span>Remote worldwide</span>
-              <span>4+ Years Experience</span>
-              <span>Available for hire</span>
+              {bio.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
             </div>
           </div>
         </div>
@@ -642,12 +620,13 @@ function BioAndContact() {
         <div className="contact-grid">
           <div className="contact-links">
             <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            <a href={`tel:${profile.phone.replace(/\D/g, '')}`}>{profile.phone}</a>
             <a href={`https://${profile.website}`}>{profile.website}</a>
             <a href={`https://${profile.github}`}>{profile.github}</a>
             <a href={`https://${profile.linkedin}`}>{profile.linkedin}</a>
           </div>
           <div className="message-card">
-            <p>&gt; send_message --to austin</p>
+            <p>&gt; send_message --to {profile.firstName.toLowerCase()}</p>
             <p>&gt; message: let's build something great</p>
             <p>&gt; status: delivered</p>
           </div>
@@ -664,7 +643,7 @@ function SectionTitle({ children }: { children: ReactNode }) {
 function Footer() {
   return (
     <footer>
-      <span>© 2026 Austin Roberts</span>
+      <span>© 2026 {profile.name}</span>
       <span>Built with React & TypeScript</span>
     </footer>
   );

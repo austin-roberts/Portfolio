@@ -1,0 +1,145 @@
+{
+  "profile": {
+    "name": "Jordan Taylor",
+    "firstName": "Jordan",
+    "initials": "JT",
+    "role": "Product Designer",
+    "tagline": "Design Systems | Research | Prototyping",
+    "location": "Pacific Northwest",
+    "availability": "Open to thoughtful collaborations",
+    "years": "8+ Years",
+    "email": "hello@example.dev",
+    "phone": "555.010.2048",
+    "website": "example.dev",
+    "github": "github.com/example-profile",
+    "linkedin": "linkedin.com/in/example-profile"
+  },
+  "hero": {
+    "title": "I design useful tools that",
+    "highlight": "make hard work feel simpler.",
+    "summary": "Product designer with experience turning complex workflows into clear, accessible interfaces for teams that need practical software."
+  },
+  "bio": {
+    "title": "Meet Jordan",
+    "paragraphs": [
+      "Jordan is a product designer who enjoys simplifying dense workflows, organizing messy systems, and helping teams turn rough ideas into usable interfaces.",
+      "The work spans research, prototyping, design systems, accessibility, and close collaboration with engineering teams."
+    ],
+    "tags": ["Pacific Northwest", "8+ Years Experience", "Available for select projects"]
+  },
+  "developerJson": [
+    "{",
+    "  \"name\": \"Jordan Taylor\",",
+    "  \"role\": \"Product Designer\",",
+    "  \"focus\": \"Design systems\",",
+    "  \"location\": \"Pacific Northwest\",",
+    "  \"availability\": \"Select collaborations\",",
+    "  \"experience\": \"8+ Years\",",
+    "  \"stack\": {",
+    "    \"design\": [\"Figma\", \"Research\", \"Prototyping\"],",
+    "    \"systems\": [\"Tokens\", \"Accessibility\", \"Documentation\"],",
+    "    \"workflow\": [\"Workshops\", \"QA\", \"Roadmaps\"]",
+    "  },",
+    "  \"strength\": \"Making complex tools easier to use\"",
+    "}"
+  ],
+  "codeFooter": "$ tea --clarity high --focus systems",
+  "homeExperience": [
+    {
+      "company": "Northstar Labs",
+      "role": "Senior Product Designer",
+      "period": "2021 - Present",
+      "location": "Remote",
+      "summary": "Led product design for internal tools, customer dashboards, and reusable interface patterns across a growing software platform.",
+      "tags": ["Design Systems", "Research", "Accessibility", "Prototyping"],
+      "accent": "purple"
+    },
+    {
+      "company": "Brightline Studio",
+      "role": "UX Designer",
+      "period": "2018 - 2021",
+      "location": "Hybrid",
+      "summary": "Designed responsive marketing and product experiences for small business, education, and operations teams.",
+      "tags": ["UX", "UI", "Workshops", "Content"],
+      "accent": "blue"
+    },
+    {
+      "company": "Independent Projects",
+      "role": "Design Consultant",
+      "period": "2016 - 2018",
+      "location": "Freelance",
+      "summary": "Helped early-stage teams clarify product flows, improve usability, and create lightweight design systems.",
+      "tags": ["Consulting", "Audits", "Systems", "QA"],
+      "accent": "cyan"
+    }
+  ],
+  "resumeExperience": [
+    {
+      "company": "Northstar Labs",
+      "role": "Senior Product Designer",
+      "period": "2021 - Present",
+      "location": "Remote product team",
+      "summary": "Owned design work for a complex SaaS platform, including research, journey mapping, prototypes, design system improvements, accessibility reviews, and handoff with engineering.",
+      "tags": ["Figma", "Research", "Design Systems", "Accessibility"],
+      "accent": "purple"
+    },
+    {
+      "company": "Brightline Studio",
+      "role": "UX Designer",
+      "period": "2018 - 2021",
+      "location": "Client services",
+      "summary": "Created responsive web experiences and product flows for client teams, balancing brand needs, usability goals, content strategy, and implementation constraints.",
+      "tags": ["UX", "UI", "Content", "Responsive Design"],
+      "accent": "blue"
+    },
+    {
+      "company": "Harbor Support",
+      "role": "Customer Operations Lead",
+      "period": "2014 - 2018",
+      "location": "Operations team",
+      "summary": "Managed support workflows, documented recurring issues, helped improve internal tooling, and partnered with product teams on customer pain points.",
+      "tags": ["Operations", "Support", "Documentation", "Process"],
+      "accent": "cyan"
+    }
+  ],
+  "skills": [
+    "Figma",
+    "Design Systems",
+    "Research",
+    "Prototyping",
+    "Accessibility",
+    "Information Architecture",
+    "Content Design",
+    "Usability Testing",
+    "Interface QA",
+    "Design Tokens",
+    "Documentation",
+    "Workshops"
+  ],
+  "projects": [
+    "Workflow audit: mapped a complex internal approval process and reduced duplicate steps across several teams.",
+    "Component library: built documentation and usage guidance for shared interface components.",
+    "Prototype sprint: helped a small team validate a new dashboard concept before engineering investment."
+  ],
+  "terminal": {
+    "about": [
+      "{",
+      "  \"name\": \"Jordan Taylor\",",
+      "  \"role\": \"Product Designer\",",
+      "  \"focus\": [\"Design Systems\", \"Research\", \"Prototyping\"],",
+      "  \"location\": \"Pacific Northwest\",",
+      "  \"availability\": \"Select collaborations\",",
+      "  \"stack\": [\"Figma\", \"Accessibility\", \"Documentation\"],",
+      "  \"strength\": \"Making complex tools easier to use\"",
+      "}"
+    ],
+    "status": [
+      "YEARS EXPERIENCE    8+",
+      "CURRENT FOCUS       Design systems and product workflows",
+      "RECENT PLATFORM     Northstar Labs",
+      "CORE TOOLKIT        Figma, research, documentation",
+      "CURRENT STATUS      Available for select projects"
+    ],
+    "resume": ["The resume download is wired as a placeholder in this demo."]
+  }
+}
