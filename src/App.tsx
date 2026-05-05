@@ -47,6 +47,12 @@ type TerminalMessage = {
 export function App() {
   const [page, setPage] = useState<Page>('home');
   const [terminalOpen, setTerminalOpen] = useState(false);
+  const [terminalPrefillRequest, setTerminalPrefillRequest] = useState(0);
+
+  function startContactCommand() {
+    setTerminalOpen(true);
+    setTerminalPrefillRequest((request) => request + 1);
+  }
 
   return (
     <div className="app-shell">
@@ -62,11 +68,12 @@ export function App() {
           open={terminalOpen}
           onClose={() => setTerminalOpen(false)}
           setPage={setPage}
+          prefillRequest={terminalPrefillRequest}
         />
         <main className="site-main">
           <Header page={page} setPage={setPage} />
           {page === 'home' ? (
-            <HomePage setPage={setPage} />
+            <HomePage setPage={setPage} startContactCommand={startContactCommand} />
           ) : (
             <ExperiencePage setPage={setPage} />
           )}
@@ -116,10 +123,12 @@ function TerminalPanel({
   open,
   onClose,
   setPage,
+  prefillRequest,
 }: {
   open: boolean;
   onClose: () => void;
   setPage: (page: Page) => void;
+  prefillRequest: number;
 }) {
   const [entries, setEntries] = useState<TerminalEntry[]>([]);
   const [typedCommand, setTypedCommand] = useState('');
@@ -167,6 +176,36 @@ function TerminalPanel({
   useEffect(() => {
     busyRef.current = busy;
   }, [busy]);
+
+  useEffect(() => {
+    if (!prefillRequest) {
+      return;
+    }
+
+    let cancelled = false;
+
+    async function prefillContactCommand() {
+      while (busyRef.current && !cancelled) {
+        await new Promise((resolve) => window.setTimeout(resolve, 40));
+      }
+
+      if (cancelled) {
+        return;
+      }
+
+      await typeIntoPrompt('send message', setTerminalInput, () => cancelled);
+
+      if (!cancelled) {
+        commitCommand('send message');
+      }
+    }
+
+    void prefillContactCommand();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [prefillRequest]);
 
   useEffect(() => {
     messageFlowRef.current = messageFlow;
@@ -654,7 +693,13 @@ function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function HomePage({ setPage }: { setPage: (page: Page) => void }) {
+function HomePage({
+  setPage,
+  startContactCommand,
+}: {
+  setPage: (page: Page) => void;
+  startContactCommand: () => void;
+}) {
   return (
     <>
       <section className="hero">
@@ -665,7 +710,9 @@ function HomePage({ setPage }: { setPage: (page: Page) => void }) {
           <p>{hero.summary}</p>
           <div className="hero-actions">
             <button onClick={() => setPage('experience')}>View Experience →</button>
-            <a href={`mailto:${profile.email}`}>Get in Touch</a>
+            <button className="secondary" onClick={startContactCommand}>
+              Get in Touch
+            </button>
           </div>
           <div className="availability">
             <span />
@@ -800,10 +847,17 @@ function ExperienceCard({
 }) {
   const canExpand = Boolean(onToggle && item.bullets?.length);
   const detailsId = `experience-details-${item.company.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  const logoClassName = item.logoTone ? `card-logo ${item.logoTone}` : 'card-logo';
 
   return (
     <article className={`experience-card ${expanded ? 'expanded' : ''}`}>
-      <div className={`card-icon ${item.accent}`} />
+      {item.logo ? (
+        <div className={logoClassName}>
+          <img src={item.logo} alt={`${item.company} logo`} />
+        </div>
+      ) : (
+        <div className={`card-icon ${item.accent}`} />
+      )}
       <div className="card-title-row">
         <h3>{item.company}</h3>
         <span>{item.period}</span>
@@ -845,9 +899,13 @@ function BioAndContact() {
       <article className="bio-card">
         <SectionTitle icon="code">{bio.title}</SectionTitle>
         <div className="bio-content">
-          <div className="portrait-placeholder" aria-label={`${profile.name} portrait placeholder`}>
-            <span>{profile.initials}</span>
-          </div>
+          {bio.image ? (
+            <img className="portrait-image" src={bio.image} alt={profile.name} />
+          ) : (
+            <div className="portrait-placeholder" aria-label={`${profile.name} portrait placeholder`}>
+              <span>{profile.initials}</span>
+            </div>
+          )}
           <div>
             {bio.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>

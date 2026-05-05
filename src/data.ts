@@ -9,6 +9,8 @@ export type ExperienceItem = {
   location: string;
   summary: string;
   bullets?: string[];
+  logo?: string;
+  logoTone?: 'light';
   tags: string[];
   accent: 'blue' | 'purple' | 'cyan';
 };
@@ -49,6 +51,7 @@ type Hero = {
 
 type Bio = {
   title: string;
+  image?: string;
   paragraphs: string[];
   tags: string[];
 };
