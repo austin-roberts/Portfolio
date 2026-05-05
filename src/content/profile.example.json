@@ -102,19 +102,19 @@
       "accent": "cyan"
     }
   ],
-  "skills": [
-    "Figma",
-    "Design Systems",
-    "Research",
-    "Prototyping",
-    "Accessibility",
-    "Information Architecture",
-    "Content Design",
-    "Usability Testing",
-    "Interface QA",
-    "Design Tokens",
-    "Documentation",
-    "Workshops"
+  "skillGroups": [
+    {
+      "title": "Product Design",
+      "items": ["Figma", "Design Systems", "Prototyping", "Interface QA"]
+    },
+    {
+      "title": "Research & Strategy",
+      "items": ["Research", "Usability Testing", "Information Architecture", "Workshops"]
+    },
+    {
+      "title": "Quality & Handoff",
+      "items": ["Accessibility", "Content Design", "Design Tokens", "Documentation"]
+    }
   ],
   "projects": [
     "Workflow audit: mapped a complex internal approval process and reduced duplicate steps across several teams.",

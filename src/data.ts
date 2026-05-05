@@ -12,6 +12,11 @@ export type ExperienceItem = {
   accent: 'blue' | 'purple' | 'cyan';
 };
 
+export type SkillGroup = {
+  title: string;
+  items: string[];
+};
+
 type Profile = {
   name: string;
   firstName: string;
@@ -54,7 +59,7 @@ type SiteContent = {
   codeFooter: string;
   homeExperience: ExperienceItem[];
   resumeExperience: ExperienceItem[];
-  skills: string[];
+  skillGroups: SkillGroup[];
   projects: string[];
   terminal: TerminalContent;
 };
@@ -68,6 +73,6 @@ export const developerJson = content.developerJson;
 export const codeFooter = content.codeFooter;
 export const homeExperience = content.homeExperience;
 export const resumeExperience = content.resumeExperience;
-export const skills = content.skills;
+export const skillGroups = content.skillGroups;
 export const projects = content.projects;
 export const terminal = content.terminal;

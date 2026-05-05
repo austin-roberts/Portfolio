@@ -48,12 +48,12 @@ export const commands: TerminalCommand[] = [
   },
   {
     name: 'help',
-    description: 'Show all commands',
+    description: 'Show command tips',
     run: () => [
-      'AVAILABLE COMMANDS',
-      ...commands.map((command) =>
-        `${command.name.padEnd(12, ' ')} ${command.description}`,
-      ),
+      'COMMAND TIPS',
+      'Type a command and press Enter.',
+      'Try: about, experience, status, contact.',
+      'The full command list stays pinned below.',
     ],
   },
 ];

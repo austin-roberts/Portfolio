@@ -10,6 +10,7 @@ import {
 } from 'react';
 import {
   type ExperienceItem,
+  type SkillGroup,
   bio,
   codeFooter,
   developerJson,
@@ -19,7 +20,7 @@ import {
   profile,
   projects,
   resumeExperience,
-  skills,
+  skillGroups,
 } from './data';
 import { commands, runCommand, type TerminalResult } from './terminal';
 
@@ -344,18 +345,11 @@ function TerminalOutput({
 }) {
   if (result.command === 'help') {
     return (
-      <div className="terminal-output terminal-help">
+      <div className="terminal-output terminal-help terminal-help-compact">
         {lines[0] && <p className="terminal-output-title">{lines[0]}</p>}
-        {lines.slice(1).map((line, index) => {
-          const [, name = line, description = ''] = line.match(/^(\S+)\s*(.*)$/) ?? [];
-
-          return (
-            <div className="terminal-help-row" key={`${name}-${index}`}>
-              <span>{name}</span>
-              <small>{description}</small>
-            </div>
-          );
-        })}
+        {lines.slice(1).map((line) => (
+          <p key={line}>{line}</p>
+        ))}
       </div>
     );
   }
@@ -508,7 +502,7 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
       </section>
       <section className="resume-grid">
         <div className="resume-column">
-          <SectionTitle>Work Experience</SectionTitle>
+          <SectionTitle icon="briefcase">Work Experience</SectionTitle>
           <div className="experience-list vertical">
             {resumeExperience.map((item) => (
               <ExperienceCard item={item} key={item.company} />
@@ -516,13 +510,13 @@ function ExperiencePage({ setPage }: { setPage: (page: Page) => void }) {
           </div>
         </div>
         <div className="resume-column">
-          <SectionTitle>Core Skills</SectionTitle>
-          <div className="skill-cloud">
-            {skills.map((skill) => (
-              <span key={skill}>{skill}</span>
+          <SectionTitle icon="layers">Core Skills</SectionTitle>
+          <div className="skill-groups">
+            {skillGroups.map((group) => (
+              <SkillGroupCard group={group} key={group.title} />
             ))}
           </div>
-          <SectionTitle>Additional Projects</SectionTitle>
+          <SectionTitle icon="spark">Additional Projects</SectionTitle>
           <div className="detail-panel">
             {projects.map((item) => (
               <p key={item}>{item}</p>
@@ -564,7 +558,7 @@ function ExperiencePreview({ setPage }: { setPage: (page: Page) => void }) {
   return (
     <section className="content-section">
       <div className="section-heading">
-        <SectionTitle>Experience</SectionTitle>
+        <SectionTitle icon="briefcase">Experience</SectionTitle>
         <button onClick={() => setPage('experience')}>View Full Experience →</button>
       </div>
       <div className="experience-list">
@@ -600,7 +594,7 @@ function BioAndContact() {
   return (
     <section className="lower-grid">
       <article className="bio-card">
-        <SectionTitle>{bio.title}</SectionTitle>
+        <SectionTitle icon="code">{bio.title}</SectionTitle>
         <div className="bio-content">
           <div className="portrait-placeholder">Photo</div>
           <div>
@@ -616,14 +610,24 @@ function BioAndContact() {
         </div>
       </article>
       <article className="contact-card">
-        <SectionTitle>Let's Connect</SectionTitle>
+        <SectionTitle icon="send">Let's Connect</SectionTitle>
         <div className="contact-grid">
           <div className="contact-links">
-            <a href={`mailto:${profile.email}`}>{profile.email}</a>
-            <a href={`tel:${profile.phone.replace(/\D/g, '')}`}>{profile.phone}</a>
-            <a href={`https://${profile.website}`}>{profile.website}</a>
-            <a href={`https://${profile.github}`}>{profile.github}</a>
-            <a href={`https://${profile.linkedin}`}>{profile.linkedin}</a>
+            <ContactLink href={`mailto:${profile.email}`} icon="mail">
+              {profile.email}
+            </ContactLink>
+            <ContactLink href={`tel:${profile.phone.replace(/\D/g, '')}`} icon="phone">
+              {profile.phone}
+            </ContactLink>
+            <ContactLink href={`https://${profile.website}`} icon="globe">
+              {profile.website}
+            </ContactLink>
+            <ContactLink href={`https://${profile.github}`} icon="code">
+              {profile.github}
+            </ContactLink>
+            <ContactLink href={`https://${profile.linkedin}`} icon="briefcase">
+              {profile.linkedin}
+            </ContactLink>
           </div>
           <div className="message-card">
             <p>&gt; send_message --to {profile.firstName.toLowerCase()}</p>
@@ -636,8 +640,117 @@ function BioAndContact() {
   );
 }
 
-function SectionTitle({ children }: { children: ReactNode }) {
-  return <h2 className="section-title">{children}</h2>;
+function SkillGroupCard({ group }: { group: SkillGroup }) {
+  return (
+    <article className="skill-group">
+      <h3>{group.title}</h3>
+      <div className="skill-cloud">
+        {group.items.map((skill) => (
+          <span key={skill}>{skill}</span>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function ContactLink({
+  children,
+  href,
+  icon,
+}: {
+  children: ReactNode;
+  href: string;
+  icon: IconName;
+}) {
+  return (
+    <a href={href}>
+      <Icon name={icon} />
+      <span>{children}</span>
+    </a>
+  );
+}
+
+function SectionTitle({
+  children,
+  icon,
+}: {
+  children: ReactNode;
+  icon?: IconName;
+}) {
+  return (
+    <h2 className="section-title">
+      {icon && <Icon name={icon} />}
+      <span>{children}</span>
+    </h2>
+  );
+}
+
+type IconName = 'briefcase' | 'code' | 'globe' | 'layers' | 'mail' | 'phone' | 'send' | 'spark';
+
+function Icon({ name }: { name: IconName }) {
+  const paths: Record<IconName, ReactNode> = {
+    briefcase: (
+      <>
+        <path d="M9 7V5.8C9 4.8 9.8 4 10.8 4h2.4C14.2 4 15 4.8 15 5.8V7" />
+        <path d="M5 7h14v10.5c0 1-.8 1.5-1.8 1.5H6.8C5.8 19 5 18.5 5 17.5V7Z" />
+        <path d="M5 11h14" />
+      </>
+    ),
+    code: (
+      <>
+        <path d="m9 8-4 4 4 4" />
+        <path d="m15 8 4 4-4 4" />
+      </>
+    ),
+    globe: (
+      <>
+        <circle cx="12" cy="12" r="8" />
+        <path d="M4 12h16" />
+        <path d="M12 4c2 2.2 3 4.8 3 8s-1 5.8-3 8" />
+        <path d="M12 4c-2 2.2-3 4.8-3 8s1 5.8 3 8" />
+      </>
+    ),
+    layers: (
+      <>
+        <path d="m12 4 8 4-8 4-8-4 8-4Z" />
+        <path d="m4 12 8 4 8-4" />
+        <path d="m4 16 8 4 8-4" />
+      </>
+    ),
+    mail: (
+      <>
+        <path d="M4 6h16v12H4V6Z" />
+        <path d="m4 7 8 6 8-6" />
+      </>
+    ),
+    phone: (
+      <path d="M8 5h3l1.3 4-2 1.2c.9 1.9 2.4 3.4 4.5 4.4l1.2-2.1 4 1.4v3c0 1.1-.9 2-2 2C10.8 19 5 13.2 5 7c0-1.1.9-2 2-2h1Z" />
+    ),
+    send: (
+      <>
+        <path d="m4 12 16-8-5 16-3-7-8-1Z" />
+        <path d="m12 13 8-9" />
+      </>
+    ),
+    spark: (
+      <>
+        <path d="M12 3v6" />
+        <path d="M12 15v6" />
+        <path d="M3 12h6" />
+        <path d="M15 12h6" />
+        <path d="m6 6 3 3" />
+        <path d="m15 15 3 3" />
+        <path d="m18 6-3 3" />
+        <path d="m9 15-3 3" />
+      </>
+    ),
+  };
+
+  return (
+    <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
+      {paths[name]}
+    </svg>
+  );
 }
 
 function Footer() {
