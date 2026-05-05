@@ -32,6 +32,18 @@ type TerminalEntry =
   | { kind: 'prompt'; text: string; typed?: boolean }
   | { kind: 'output'; result: TerminalResult; lines: string[] };
 
+type MessageFlow = {
+  step: 'name' | 'email' | 'message';
+  name: string;
+  email: string;
+};
+
+type TerminalMessage = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export function App() {
   const [page, setPage] = useState<Page>('home');
   const [terminalOpen, setTerminalOpen] = useState(false);
@@ -113,10 +125,12 @@ function TerminalPanel({
   const [typedCommand, setTypedCommand] = useState('');
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(true);
+  const [messageFlow, setMessageFlow] = useState<MessageFlow | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const inputValueRef = useRef('');
   const busyRef = useRef(true);
+  const messageFlowRef = useRef<MessageFlow | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -153,6 +167,10 @@ function TerminalPanel({
   useEffect(() => {
     busyRef.current = busy;
   }, [busy]);
+
+  useEffect(() => {
+    messageFlowRef.current = messageFlow;
+  }, [messageFlow]);
 
   useEffect(() => {
     function catchGlobalTyping(event: globalThis.KeyboardEvent) {
@@ -225,7 +243,21 @@ function TerminalPanel({
 
     setEntries((current) => [...current, { kind: 'prompt', text: cleanInput }]);
     setTerminalInput('');
+
+    const activeMessageFlow = messageFlowRef.current;
+
+    if (activeMessageFlow) {
+      handleMessageFlow(cleanInput, activeMessageFlow);
+      return;
+    }
+
     const result = runCommand(cleanInput);
+
+    if (result.command === 'send message') {
+      setMessageFlow({ step: 'name', name: '', email: '' });
+      void printResult(result);
+      return;
+    }
 
     if (result.command === 'experience') {
       void printResult({
@@ -241,6 +273,125 @@ function TerminalPanel({
     }
 
     void printResult(result);
+  }
+
+  function handleMessageFlow(value: string, flow: MessageFlow) {
+    if (flow.step === 'name') {
+      if (value.length < 2) {
+        void printResult({
+          command: 'send message',
+          lines: ['Name looks a little short.', "What's your name?"],
+        });
+        return;
+      }
+
+      setMessageFlow({ ...flow, step: 'email', name: value });
+      void printResult({
+        command: 'send message',
+        lines: [`Nice to meet you, ${value}.`, "What's your email?"],
+      });
+      return;
+    }
+
+    if (flow.step === 'email') {
+      if (!isValidEmail(value)) {
+        void printResult({
+          command: 'send message',
+          lines: ['That email does not look quite right.', "What's your email?"],
+        });
+        return;
+      }
+
+      setMessageFlow({ ...flow, step: 'message', email: value });
+      void printResult({
+        command: 'send message',
+        lines: ['Got it.', 'What should the message say?'],
+      });
+      return;
+    }
+
+    if (value.length < 8) {
+      void printResult({
+        command: 'send message',
+        lines: ['Give me a little more to send.', 'What should the message say?'],
+      });
+      return;
+    }
+
+    if (value.length > 2000) {
+      void printResult({
+        command: 'send message',
+        lines: ['That message is a bit long for the terminal.', 'Keep it under 2000 characters.'],
+      });
+      return;
+    }
+
+    setMessageFlow(null);
+    void sendTerminalMessage({
+      name: flow.name,
+      email: flow.email,
+      message: value,
+    });
+  }
+
+  async function sendTerminalMessage(message: TerminalMessage) {
+    const endpoint = profile.messageEndpoint?.trim();
+
+    if (!endpoint) {
+      await printResult({
+        command: 'send message',
+        lines: [
+          'Message captured, but not sent.',
+          'Formspree is not configured yet.',
+          'Add your endpoint to messageEndpoint in src/content/profile.json.',
+        ],
+      });
+      return;
+    }
+
+    await printResult({
+      command: 'send message',
+      lines: ['Sending message...'],
+    });
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: message.name,
+          email: message.email,
+          message: message.message,
+          _subject: `Portfolio message from ${message.name}`,
+          source: profile.website,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Formspree rejected the message.');
+      }
+
+      await printResult({
+        command: 'send message',
+        lines: [
+          `from: ${message.name} <${message.email}>`,
+          `message: ${message.message}`,
+          'status: delivered',
+        ],
+      });
+    } catch {
+      await printResult({
+        command: 'send message',
+        lines: [
+          'status: not delivered',
+          'Something blocked the Formspree request.',
+          `email: ${profile.email}`,
+        ],
+      });
+    }
   }
 
   function catchEnter(event: KeyboardEvent<HTMLInputElement>) {
@@ -499,6 +650,10 @@ function revealLines(lines: string[], characterCount: number) {
   return visible;
 }
 
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 function HomePage({ setPage }: { setPage: (page: Page) => void }) {
   return (
     <>
@@ -726,7 +881,7 @@ function BioAndContact() {
             </ContactLink>
           </div>
           <div className="message-card">
-            <p>&gt; send_message --to {profile.firstName.toLowerCase()}</p>
+            <p>&gt; send message</p>
             <p>&gt; message: let's build something great</p>
             <p>&gt; status: delivered</p>
           </div>

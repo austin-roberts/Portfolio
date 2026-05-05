@@ -38,6 +38,7 @@ type Profile = {
   github: string;
   linkedin: string;
   resumePath?: string;
+  messageEndpoint?: string;
 };
 
 type Hero = {

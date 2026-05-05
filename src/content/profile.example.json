@@ -13,7 +13,8 @@
     "website": "example.dev",
     "github": "github.com/example-profile",
     "linkedin": "linkedin.com/in/example-profile",
-    "resumePath": "/resume.example.pdf"
+    "resumePath": "/resume.example.pdf",
+    "messageEndpoint": ""
   },
   "hero": {
     "title": "Hey, I'm Jordan.",

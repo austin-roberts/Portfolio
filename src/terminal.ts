@@ -42,6 +42,11 @@ export const commands: TerminalCommand[] = [
     ],
   },
   {
+    name: 'send message',
+    description: 'Send a note',
+    run: () => ['Starting message flow...', "What's your name?"],
+  },
+  {
     name: 'status',
     description: 'System status',
     run: () => terminal.status,
@@ -132,12 +137,15 @@ const hiddenCommands: Record<string, string[]> = {
 
 export function runCommand(input: string) {
   const cleanInput = input.trim().toLowerCase().replace(/\s+/g, ' ');
-  const command = commands.find((item) => item.name === cleanInput);
+  const aliasedInput = ['message', 'send', 'send-message', 'send_message'].includes(cleanInput)
+    ? 'send message'
+    : cleanInput;
+  const command = commands.find((item) => item.name === aliasedInput);
 
-  if (hiddenCommands[cleanInput]) {
+  if (hiddenCommands[aliasedInput]) {
     return {
       command: 'hidden',
-      lines: hiddenCommands[cleanInput],
+      lines: hiddenCommands[aliasedInput],
     };
   }
 
