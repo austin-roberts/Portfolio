@@ -982,9 +982,13 @@ footer {
     border-radius: 999px;
     background: rgba(3, 13, 22, 0.96);
     color: var(--lime);
-    font-family: var(--font-mono);
-    font-size: 1.4rem;
     box-shadow: 0 0 28px rgba(18, 216, 255, 0.28);
+  }
+
+  .terminal-fab .icon {
+    width: 1.45rem;
+    height: 1.45rem;
+    stroke-width: 1.9;
   }
 
   .site-main {
@@ -993,22 +997,56 @@ footer {
   }
 
   .site-header {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 3.25rem minmax(0, 1fr) 3.25rem;
     min-height: auto;
     padding: 1rem 0;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    justify-self: start;
   }
 
   .nav-links {
-    order: 3;
-    grid-column: 1 / -1;
-    justify-self: stretch;
-    justify-content: space-between;
+    justify-self: center;
+    justify-content: center;
+    gap: 0.35rem;
     margin: 0;
-    padding-top: 0.5rem;
+    padding: 0.28rem;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-sm);
+    background: rgba(4, 14, 24, 0.64);
+  }
+
+  .nav-links button {
+    min-height: 2.25rem;
+    padding: 0 0.65rem;
+    border-radius: var(--radius-xs);
+    font-size: 0.82rem;
+  }
+
+  .nav-links button.active {
+    background: rgba(18, 216, 255, 0.1);
+  }
+
+  .nav-links button.active::after {
+    display: none;
   }
 
   .resume-button {
-    min-width: 7.5rem;
+    justify-self: end;
+    min-width: 0;
+    width: 3.25rem;
+    padding: 0;
+  }
+
+  .resume-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .hero,

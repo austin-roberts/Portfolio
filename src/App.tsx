@@ -44,7 +44,7 @@ export function App() {
           aria-label="Open terminal"
           onClick={() => setTerminalOpen(true)}
         >
-          $
+          <Icon name="terminal" />
         </button>
         <TerminalPanel
           open={terminalOpen}
@@ -93,7 +93,8 @@ function Header({
         aria-label="Download resume"
         download
       >
-        Resume <Icon name="download" />
+        <span className="resume-label">Resume</span>
+        <Icon name="download" />
       </a>
     </header>
   );
@@ -791,7 +792,8 @@ type IconName =
   | 'mail'
   | 'phone'
   | 'send'
-  | 'spark';
+  | 'spark'
+  | 'terminal';
 
 function Icon({ name }: { name: IconName }) {
   const paths: Record<IconName, ReactNode> = {
@@ -855,6 +857,13 @@ function Icon({ name }: { name: IconName }) {
         <path d="m15 15 3 3" />
         <path d="m18 6-3 3" />
         <path d="m9 15-3 3" />
+      </>
+    ),
+    terminal: (
+      <>
+        <path d="M4 6h16v12H4V6Z" />
+        <path d="m7 10 2 2-2 2" />
+        <path d="M11 14h5" />
       </>
     ),
   };
