@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Austin Roberts portfolio preview</title>
+  <desc id="desc">Social preview image for Austin Roberts, senior front-end developer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#02070d"/>
+      <stop offset=".62" stop-color="#06172a"/>
+      <stop offset="1" stop-color="#02070d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="120" y1="500" x2="740" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12d8ff"/>
+      <stop offset=".52" stop-color="#147cff"/>
+      <stop offset="1" stop-color="#9657ff"/>
+    </linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0v42" fill="none" stroke="#135a92" stroke-opacity=".16"/>
+    </pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.05 0 0 0 0 0.55 0 0 0 0 1 0 0 0 .7 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="960" cy="150" r="270" fill="#147cff" opacity=".14"/>
+  <circle cx="1070" cy="520" r="230" fill="#9657ff" opacity=".1"/>
+  <g transform="translate(804 152) scale(1.48)" opacity=".9" filter="url(#glow)">
+    <path d="M0 210 86 12h58l92 198h-58l-18-43H72l-18 43H0Zm92-92h48l-24-56-24 56Z" fill="url(#accent)"/>
+    <path d="M152 12h102c49 0 82 28 82 70 0 30-16 52-43 63l45 65h-62l-38-59h-31v59h-55V12Zm55 47v45h43c20 0 31-8 31-23 0-14-11-22-31-22h-43Z" fill="url(#accent)"/>
+  </g>
+  <g transform="translate(86 104)">
+    <text x="0" y="0" fill="#12d8ff" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="30" font-weight="700">austinroberts.net</text>
+    <text x="0" y="112" fill="#f4f7fb" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="850">Austin Roberts</text>
+    <text x="0" y="190" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="850">Senior Front-End Developer</text>
+    <text x="0" y="282" fill="#a8b3c2" font-family="Inter, Arial, sans-serif" font-size="32">Fast, maintainable web and ecommerce experiences</text>
+    <text x="0" y="328" fill="#a8b3c2" font-family="Inter, Arial, sans-serif" font-size="32">across Shopify, React, PHP, SEO, accessibility,</text>
+    <text x="0" y="374" fill="#a8b3c2" font-family="Inter, Arial, sans-serif" font-size="32">and performance.</text>
+  </g>
+  <rect x="84" y="532" width="404" height="54" rx="8" fill="#061420" stroke="#4e8ec2" stroke-opacity=".56"/>
+  <circle cx="118" cy="559" r="10" fill="#41e757"/>
+  <text x="144" y="570" fill="#c8d2de" font-family="SFMono-Regular, Menlo, Consolas, monospace" font-size="24">Open to Remote or Relocation</text>
+</svg>
