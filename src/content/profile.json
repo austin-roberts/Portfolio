@@ -62,7 +62,7 @@
     },
     {
       "value": "9s",
-      "label": "load-time reduction on one ecommerce store"
+      "label": "load-time reduction improvements"
     },
     {
       "value": "B2B",
@@ -90,7 +90,7 @@
       "company": "Code Corporation",
       "role": "Web Developer",
       "period": "2012 - 2016",
-      "location": "Marketing websites",
+      "location": "Marketing websites / Custom apps",
       "summary": "Built and maintained responsive websites, marketing pages, PHP and jQuery-based experiences, and ongoing content and troubleshooting workflows.",
       "logo": "/code-logo.png",
       "logoTone": "light",
@@ -126,7 +126,7 @@
       "role": "Lead Front-End Developer",
       "period": "2016 - Oct 2025",
       "location": "Retail, wholesale, and B2B ecommerce",
-      "summary": "Led storefront development across custom PHP ecommerce systems and Shopify stores. Built reusable React and Liquid features, custom promotional tools, webhook-driven workflows, product discovery features with Bloomreach and Algolia, checkout experiences with Braintree, Apple Pay, and Google Pay, and performance work that reduced user-facing load time by roughly 9 seconds on one store.",
+      "summary": "Led storefront development across custom PHP ecommerce systems and Shopify stores. Built reusable React and Liquid features, custom promotional tools, webhook-driven workflows, product discovery features with Bloomreach and Algolia, checkout experiences with Braintree, Apple Pay, and Google Pay, and performance work that reduced user-facing load time.",
       "logo": "/apg-logo.png",
       "bullets": [
         "Served as lead front-end developer for ecommerce storefronts spanning retail, wholesale, and B2B use cases.",
@@ -184,6 +184,8 @@
       "period": "2008 - 2012",
       "location": "Technical client support",
       "summary": "Led daily support operations, maintained service quality and SLA standards, hired and trained staff, coordinated process improvements, and worked directly with clients and internal teams to resolve technical issues.",
+      "logo": "/netmail-logo.svg",
+      "logoTone": "light",
       "bullets": [
         "Managed daily support operations and helped maintain quality standards across the team.",
         "Hired, trained, supervised, and supported staff in a technical client-service environment.",

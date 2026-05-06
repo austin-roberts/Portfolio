@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 64" role="img" aria-labelledby="title">
+  <title id="title">Netmail</title>
+  <rect width="220" height="64" rx="7" fill="#f8f9fc"/>
+  <g font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="45" font-weight="900" letter-spacing="-4">
+    <text x="8" y="47" fill="#060606">net</text>
+    <text x="87" y="47" fill="#ed2234">m</text>
+    <text x="126" y="47" fill="#060606">ail</text>
+  </g>
+</svg>
