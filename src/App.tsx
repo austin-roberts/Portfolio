@@ -46,7 +46,7 @@ type TerminalMessage = {
 
 export function App() {
   const [page, setPage] = useState<Page>('home');
-  const [terminalOpen, setTerminalOpen] = useState(false);
+  const [terminalOpen, setTerminalOpen] = useState(true);
   const [terminalPrefillRequest, setTerminalPrefillRequest] = useState(0);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export function App() {
 
   return (
     <div className="app-shell">
-      <div className="workspace">
+      <div className={`workspace ${terminalOpen ? 'terminal-open' : 'terminal-closed'}`}>
         <button
           className="terminal-fab"
           aria-label="Open terminal"
@@ -146,7 +146,7 @@ function TerminalPanel({
   const messageFlowRef = useRef<MessageFlow | null>(null);
 
   useEffect(() => {
-    if (!open) {
+    if (!open || !window.matchMedia('(max-width: 820px)').matches) {
       return;
     }
 
@@ -786,7 +786,7 @@ function HomePage({
         <DeveloperCard />
       </section>
       <ExperiencePreview setPage={setPage} />
-      <BioAndContact />
+      <BioAndContact startContactCommand={startContactCommand} />
       <Footer />
     </>
   );
@@ -955,7 +955,7 @@ function ExperienceCard({
   );
 }
 
-function BioAndContact() {
+function BioAndContact({ startContactCommand }: { startContactCommand: () => void }) {
   return (
     <section className="lower-grid">
       <article className="bio-card">
@@ -1000,11 +1000,16 @@ function BioAndContact() {
               {profile.linkedin}
             </ContactLink>
           </div>
-          <div className="message-card">
+          <button
+            className="message-card"
+            type="button"
+            onClick={startContactCommand}
+            aria-label="Start a terminal message"
+          >
             <p>&gt; send message</p>
             <p>&gt; message: let's build something great</p>
             <p>&gt; status: delivered</p>
-          </div>
+          </button>
         </div>
       </article>
     </section>
