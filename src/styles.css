@@ -438,6 +438,22 @@ button {
   font-family: var(--font-mono);
   text-decoration: none;
   text-transform: uppercase;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.resume-button:hover,
+.resume-button:focus-visible,
+.hero-actions button:hover,
+.hero-actions button:focus-visible,
+.hero-actions a:hover,
+.hero-actions a:focus-visible {
+  border-color: rgba(18, 216, 255, 0.9);
+  box-shadow: 0 0 26px rgba(18, 216, 255, 0.18);
+  transform: translateY(-1px);
 }
 
 .resume-button {
@@ -496,6 +512,7 @@ button {
 }
 
 .hero-actions button {
+  flex: 0 1 12rem;
   min-width: 12rem;
   border: 0;
   background: linear-gradient(110deg, #09a6ff, #933bff);
@@ -665,6 +682,19 @@ button {
   color: var(--cyan);
   font-family: var(--font-mono);
   text-transform: uppercase;
+  transition:
+    color 160ms ease,
+    text-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.section-heading button:hover,
+.section-heading button:focus-visible,
+.resume-hero button:hover,
+.resume-hero button:focus-visible {
+  color: var(--lime);
+  text-shadow: 0 0 18px rgba(182, 255, 22, 0.24);
+  transform: translateX(2px);
 }
 
 .section-title {
@@ -793,6 +823,17 @@ button {
   font-family: var(--font-mono);
   font-size: 0.76rem;
   text-transform: uppercase;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.experience-toggle:hover,
+.experience-toggle:focus-visible {
+  border-color: rgba(18, 216, 255, 0.9);
+  box-shadow: 0 0 18px rgba(18, 216, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .experience-toggle span {
@@ -970,6 +1011,25 @@ button {
 
 .message-card p:last-child {
   margin-bottom: 0;
+}
+
+.json-source-note {
+  margin: 1rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.json-source-note a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.json-source-note a:hover,
+.json-source-note a:focus-visible {
+  text-decoration: underline;
 }
 
 .resume-hero {
@@ -1254,6 +1314,7 @@ footer {
 
   .hero-actions button,
   .hero-actions a {
+    flex-basis: 12rem;
     min-width: 0;
     max-width: 100%;
     padding: 0.75rem 0.9rem;
@@ -1317,6 +1378,7 @@ footer {
 
   .hero-actions {
     display: grid;
+    grid-template-columns: 1fr;
   }
 
   .proof-strip {

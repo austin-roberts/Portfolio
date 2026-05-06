@@ -771,10 +771,10 @@ function HomePage({
           </h1>
           <p>{hero.summary}</p>
           <div className="hero-actions">
-            <button onClick={() => setPage('experience')}>View Experience →</button>
-            <button className="secondary" onClick={startContactCommand}>
+            <button onClick={startContactCommand}>
               Get in Touch
             </button>
+            <button className="secondary" onClick={() => setPage('experience')}>View Experience →</button>
           </div>
           <div className="availability">
             <span />
@@ -1011,6 +1011,10 @@ function BioAndContact({ startContactCommand }: { startContactCommand: () => voi
             <p>&gt; status: delivered</p>
           </button>
         </div>
+        <p className="json-source-note">
+          This website’s content is generated from a single{' '}
+          <a href="/src/content/profile.json">JSON file</a>.
+        </p>
       </article>
     </section>
   );
