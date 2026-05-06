@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "austinroberts-net",
+  "name": "portfolio",
   "compatibility_date": "2026-05-05",
   "assets": {
     "directory": "./dist",
